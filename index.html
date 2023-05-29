@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="./style/geral.css">
+
+        <title>Document</title>
+    </head>
+    <body>
+
+        <div id="card-001" class="card">
+
+            <div class="header">
+                <a href="#" class="button param-selected dark" nextPageId="card-001">░</a>
+                <a href="#" class="button quality dark">▒</a>
+                <a href="#" class="button config dark">░</a>
+            </div>
+
+            <div class="container">
+                <div class="content">
+                    <h2 class="card-title">Indique o Diâmetro do fuso!</h2>
+            
+                    <div class="wrapper">
+                        <p class="label">Diâmetro do Fuso</p>
+                        <p class="label-unit">Ø</p>
+                        <input id="screw_diameter" class="input" type="number" pattern="[0-9]*" name="screw-diameter" value="">
+                        <p class="label-unit">mm</p>
+                    </div>
+            
+                    <div class="footer">
+
+                        <div class="overview">
+                            <div class="wrapper left">
+                                <p class="label-unit">Ø</p>
+                                <p class="overview-result" id="result_screw_diameter_mm">00</p>
+                                <p class="label-unit">mm</p>
+                                
+                                <div class="spacer"></div>
+
+                                <p class="label-unit">s/v</p>
+                                <p class="overview-result" id="result_stroke_mm">00.0</p>
+                                <p class="label-unit">mm</p>
+        
+                                <div class="spacer"></div>
+
+                                <p>=</p>
+        
+                                <div class="spacer"></div>
+
+                                <p class="label-unit pink">V</p>
+                                <p class="overview-result" id="result_stroke_cm3">0.000</p>
+                                <p class="label-unit">cm³</p>
+        
+                            </div>
+                        </div>
+
+                        <a id="001-validation" href="#" class="button next" nextPageId="card-002">❯</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="card-002" class="card">
+
+            <div class="header">
+                <a href="#" class="button param dark" nextPageId="card-001">░</a>
+                <a href="#" class="button quality-selected dark">▒</a>
+                <a href="#" class="button config dark">░</a>
+            </div>
+
+            <div class="container">
+                <div class="content">
+                    <h2 class="card-title">Qual Conversão pretende?</h2>
+                        
+                        <div class="wrapper">
+                            <p class="label">mm  ➔ cm³</p>
+                            <div class="radio-container">
+                                <input class="input radio" type="radio" name="conversion_type" id="radio_mm_to_cm3" toPage="card-003">
+                            </div>
+                        </div>
+                        
+                        <div class="wrapper">
+                            <p class="label">cm3  ➔ mm</p>
+                            <div class="radio-container">
+                                <input class="input radio" type="radio" name="conversion_type" id="radio_cm3_to_mm" toPage="card-004">
+                            </div>
+                        </div>
+
+                    <div class="footer">
+
+                        <div class="overview">
+                            <div class="wrapper left">
+                                <p class="label-unit">Ø</p>
+                                <p class="overview-result" id="result_screw_diameter_mm">00</p>
+                                <p class="label-unit">mm</p>
+                                
+                                <div class="spacer"></div>
+
+                                <p class="label-unit">s/v</p>
+                                <p class="overview-result" id="result_stroke_mm">00.0</p>
+                                <p class="label-unit">mm</p>
+        
+                                <div class="spacer"></div>
+
+                                <p>=</p>
+        
+                                <div class="spacer"></div>
+
+                                <p class="label-unit pink">V</p>
+                                <p class="overview-result" id="result_stroke_cm3">0.000</p>
+                                <p class="label-unit">cm³</p>
+        
+                            </div>
+                        </div>
+
+                        <a id="002-validation" href="#" class="button next" nextPageId="card-003">❯</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="card-003" class="card">
+
+            <div class="header">
+                <a href="#" class="button param dark" nextPageId="card-001">░</a>
+                <a href="#" class="button quality dark">▒</a>
+                <a href="#" class="button config-selected dark">░</a>
+            </div>
+
+            <div class="container">
+                <div class="content">
+                    <h2 class="card-title">Milímetros para Centímetros Cúbicos</h2>
+                        
+                        <div class="wrapper">
+                            <p class="label">Curso/Velocidade</p>
+                            <p class="label-unit">s/v</p>
+                            <input class="input" type="number" name="input_stroke_mm" value="0">
+                            <p class="label-unit">mm</p>
+                        </div>
+
+                        <div class="wrapper">
+                            <p class="label">Resultado</p>
+                            <p class="label-unit pink">V</p>
+                            <input class="input realtime" type="number" disabled="true" name="result_stroke_cm3" value="">
+                            <p class="label-unit">cm³</p>
+                        </div>
+
+                    <div class="footer">
+
+                        <div class="overview">
+                            <div class="wrapper left">
+                                <p class="label-unit">Ø</p>
+                                <p class="overview-result" id="result_screw_diameter_mm">00</p>
+                                <p class="label-unit">mm</p>
+                                
+                                <div class="spacer"></div>
+
+                                <p class="label-unit">s/v</p>
+                                <p class="overview-result" id="result_stroke_mm">00.0</p>
+                                <p class="label-unit">mm</p>
+        
+                                <div class="spacer"></div>
+
+                                <p>=</p>
+        
+                                <div class="spacer"></div>
+
+                                <p class="label-unit pink">V</p>
+                                <p class="overview-result" id="result_stroke_cm3">0.000</p>
+                                <p class="label-unit">cm³</p>
+        
+                            </div>
+                        </div>
+
+                        <a id="003-validation" href="#" class="button next" nextPageId="card-002">❮</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="card-004" class="card">
+
+            <div class="header">
+                <a href="#" class="button param dark" nextPageId="card-001">░</a>
+                <a href="#" class="button quality dark">▒</a>
+                <a href="#" class="button config-selected dark">░</a>
+            </div>
+
+            <div class="container">
+                <div class="content">
+                    <h2 class="card-title">Centímetros Cúbicos para Milímetros </h2>
+                        
+                        <div class="wrapper">
+                            <p class="label">Curso/Velocidade</p>
+                            <p class="label-unit pink">V</p>
+                            <input class="input" type="number" name="input_stroke_cm3" value="0">
+                            <p class="label-unit">cm³</p>
+                        </div>
+
+                        <div class="wrapper">
+                            <p class="label">Resultado</p>
+                            <p class="label-unit">s/v</p>
+                            <input class="input realtime" type="number" disabled="true" name="result_stroke_mm" value="">
+                            <p class="label-unit">mm</p>
+                        </div>
+
+                    <div class="footer">
+
+                        <div class="overview">
+                            <div class="wrapper left">
+                                <p class="label-unit">Ø</p>
+                                <p class="overview-result" id="result_screw_diameter_mm">00</p>
+                                <p class="label-unit">mm</p>
+                                
+                                <div class="spacer"></div>
+
+                                <p class="label-unit">s/v</p>
+                                <p class="overview-result" id="result_stroke_mm">00.0</p>
+                                <p class="label-unit">mm</p>
+        
+                                <div class="spacer"></div>
+
+                                <p>=</p>
+        
+                                <div class="spacer"></div>
+
+                                <p class="label-unit pink">V</p>
+                                <p class="overview-result" id="result_stroke_cm3">0.000</p>
+                                <p class="label-unit">cm³</p>
+        
+                            </div>
+                        </div>
+
+                        <a id="004-validation" href="#" class="button next" nextPageId="card-002">❮</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        
+        <script src="./scripts/app.js" type="module"></script>
+
+    </body>
+</html>
