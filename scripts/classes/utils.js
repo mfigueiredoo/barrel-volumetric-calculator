@@ -5,7 +5,9 @@ let units = {
     mm2 : "mm2",
     cm2 : "cm2",
     mm3 : "mm3",
-    cm3 : "cm3"
+    cm3 : "cm3",
+    rpm : "rpm",
+    mms : "mms"
 }
 
 let unit_parse_correspondence = {
@@ -14,7 +16,7 @@ let unit_parse_correspondence = {
     mm2 : "cm2",
     cm2 : "mm2",
     mm3 : "cm3",
-    cm3 : "mm3"
+    cm3 : "mm3",
 
 }
 

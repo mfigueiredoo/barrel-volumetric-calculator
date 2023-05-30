@@ -235,7 +235,14 @@ textarea:focus, input:focus{
 }
 
 .button {
-    padding: 1.5em;
+
+    min-width: fit-content;
+    min-height: fit-content;
+
+    width: 1em;
+    height: 1em;
+
+    padding: 0.6em;
     margin: 0.1em;
 
     color: white;
@@ -246,11 +253,17 @@ textarea:focus, input:focus{
     
     border: 0.4em solid #000;
     
+    font-size: 1.8em;
     
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .dark {
-    color: #3a3a3a;
+    color: #2a2a2a;
 }
 
 .next {

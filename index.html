@@ -14,9 +14,9 @@
         <div id="card-001" class="card">
 
             <div class="header">
-                <a href="#" class="button param-selected dark" nextPageId="card-001">░</a>
-                <a href="#" class="button quality dark">▒</a>
-                <a href="#" class="button config dark">░</a>
+                <a href="#" class="button param-selected dark" nextPageId="card-001">Ø</a>
+                <a href="#" class="button quality dark">ƒ</a>
+                <a href="#" class="button config dark">=</a>
             </div>
 
             <div class="container">
@@ -68,9 +68,9 @@
         <div id="card-002" class="card">
 
             <div class="header">
-                <a href="#" class="button param dark" nextPageId="card-001">░</a>
-                <a href="#" class="button quality-selected dark">▒</a>
-                <a href="#" class="button config dark">░</a>
+                <a href="#" class="button param dark" nextPageId="card-001">Ø</a>
+                <a href="#" class="button quality-selected dark">ƒ</a>
+                <a href="#" class="button config dark">=</a>
             </div>
 
             <div class="container">
@@ -90,6 +90,14 @@
                                 <input class="input radio" type="radio" name="conversion_type" id="radio_cm3_to_mm" toPage="card-004">
                             </div>
                         </div>
+
+                        <div class="wrapper">
+                            <p class="label">1/min  ➔ mm/s</p>
+                            <div class="radio-container">
+                                <input class="input radio" type="radio" name="conversion_type" id="radio_rpm_to_mms" toPage="card-005">
+                            </div>
+                        </div>
+
 
                     <div class="footer">
 
@@ -130,9 +138,9 @@
         <div id="card-003" class="card">
 
             <div class="header">
-                <a href="#" class="button param dark" nextPageId="card-001">░</a>
-                <a href="#" class="button quality dark">▒</a>
-                <a href="#" class="button config-selected dark">░</a>
+                <a href="#" class="button param dark" nextPageId="card-001">Ø</a>
+                <a href="#" class="button quality dark">ƒ</a>
+                <a href="#" class="button config-selected dark">=</a>
             </div>
 
             <div class="container">
@@ -191,9 +199,9 @@
         <div id="card-004" class="card">
 
             <div class="header">
-                <a href="#" class="button param dark" nextPageId="card-001">░</a>
-                <a href="#" class="button quality dark">▒</a>
-                <a href="#" class="button config-selected dark">░</a>
+                <a href="#" class="button param dark" nextPageId="card-001">Ø</a>
+                <a href="#" class="button quality dark">ƒ</a>
+                <a href="#" class="button config-selected dark">=</a>
             </div>
 
             <div class="container">
@@ -242,16 +250,73 @@
                         </div>
 
                         <a id="004-validation" href="#" class="button next" nextPageId="card-002">❮</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="card-005" class="card">
+
+            <div class="header">
+                <a href="#" class="button param dark" nextPageId="card-001">Ø</a>
+                <a href="#" class="button quality dark">ƒ</a>
+                <a href="#" class="button config-selected dark">=</a>
+            </div>
+
+            <div class="container">
+                <div class="content">
+                    <h2 class="card-title">Rotações por Minuto para Milímetros por Segundo </h2>
+                        
+                        <div class="wrapper">
+                            <p class="label">Velocidade Radial</p>
+                            <p class="label-unit">r</p>
+                            <input class="input" type="number" name="input_rotation_rpm" value="0">
+                            <p class="label-unit">1/min</p>
+                        </div>
+
+                        <div class="wrapper">
+                            <p class="label">Velocidade Linear</p>
+                            <p class="label-unit">l</p>
+                            <input class="input realtime" type="number" disabled="true" name="result_rotation_mms" value="">
+                            <p class="label-unit">mm/s</p>
+                        </div>
+
+                    <div class="footer">
+
+                        <div class="overview">
+                            <div class="wrapper left">
+                                <p class="label-unit">Ø</p>
+                                <p class="overview-result" id="result_screw_diameter_mm">00</p>
+                                <p class="label-unit">mm</p>
+                                
+                                <div class="spacer"></div>
+
+                                <p class="label-unit">s/v</p>
+                                <p class="overview-result" id="result_stroke_mm">00.0</p>
+                                <p class="label-unit">mm</p>
+        
+                                <div class="spacer"></div>
+
+                                <p>=</p>
+        
+                                <div class="spacer"></div>
+
+                                <p class="label-unit pink">V</p>
+                                <p class="overview-result" id="result_stroke_cm3">0.000</p>
+                                <p class="label-unit">cm³</p>
+        
+                            </div>
+                        </div>
+
+                        <a id="005-validation" href="#" class="button next" nextPageId="card-002">❮</a>
                     </div>
 
                 </div>
             </div>
-
         </div>
-
-
         
         <script src="./scripts/app.js" type="module"></script>
-
+        <!-- <script src="./scripts/debug.js" type="module"></script> -->
     </body>
 </html>

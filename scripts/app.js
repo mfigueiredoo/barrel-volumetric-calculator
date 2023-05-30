@@ -3,15 +3,18 @@ import cards from "./cards.js"
 import UTILS from "./classes/utils.js"
 import SCREW from "./classes/screw.js"
 import STROKE from "./classes/stroke.js"
+import ROTATION from "./classes/rotation.js"
 
 let screw = new SCREW({value: 30, unit: UTILS.units.mm})
 let stroke = new STROKE({value: 1, unit: UTILS.units.mm}, screw)
+let rotation = new ROTATION({value: 60, unit: UTILS.units.rpm}, screw)
 
 let SCREW_DIAMETER = 0
 let CONVERSION_TYPE = ""
 let STROKE_MM = 0
 let STROKE_CM3 = 0
-
+let ROTATION_RPM = 0
+let ROTATION_MMS = 0
 
 let card_validation_bts = document.getElementsByClassName("button")
 let screw_diameter_input = document.getElementById("screw_diameter")
@@ -20,9 +23,13 @@ let radio_btn_conversion_type = document.getElementsByName("conversion_type")
 
 let input_stroke_mm = document.getElementsByName("input_stroke_mm")[0]
 let input_stroke_cm3 = document.getElementsByName("input_stroke_cm3")[0]
+let input_rotation_rpm = document.getElementsByName("input_rotation_rpm")[0]
+//let input_rotation_mms = document.getElementsByName("input_rotation_mms")[0]
 
 let result_output_stroke_cm3 = document.getElementsByName("result_stroke_cm3")[0]
 let result_output_stroke_mm = document.getElementsByName("result_stroke_mm")[0]
+let result_output_rotation_mms = document.getElementsByName("result_rotation_mms")[0]
+//let result_output_rotation_rpm = document.getElementsByName("result_rotation_rpm")[0]
 
 let overview_result_output_elements = document.getElementsByClassName("overview-result")
 
@@ -93,6 +100,13 @@ function inputScrewDiameterFocusOutEventHandler(e) {
 
     updateOverviewOutputElements("result_screw_diameter_mm", SCREW_DIAMETER)
 
+    if (!CONVERSION_TYPE) return
+    if (CONVERSION_TYPE == "radio_mm_to_cm3" )
+    inputStrokeFocusOutEventHandler({target: input_stroke_mm})
+    
+    if (CONVERSION_TYPE == "radio_cm3_to_mm" )
+    inputStrokeFocusOutEventHandler({target: input_stroke_cm3})
+
 }
 
 function inputStrokeFocusOutEventHandler(e) {
@@ -139,6 +153,30 @@ function inputStrokeFocusOutEventHandler(e) {
 
 }
 
+function inputRotationFocusOutEventHandler(e) {
+    let new_value = e.target.value
+
+
+    if (new_value <= 0) {
+        e.target.style = "border-color: red;"
+        e.target.value = e.target.getAttribute("value")
+    }
+
+    e.target.style = "border-color: #000;"
+
+
+    if (e.target.name === "input_rotation_rpm") {
+        ROTATION_RPM = e.target.value
+        e.target.setAttribute("value", e.target.value)
+
+        screw.update({value: SCREW_DIAMETER, unit: UTILS.units.mm})
+        rotation.update({value: ROTATION_RPM, unit: UTILS.units.rpm}, screw)
+
+        result_output_rotation_mms.value = rotation.get_rotation(UTILS.units.mms)
+
+    }
+}
+
 function radioBtnChangeEventHandler(e) {
     card_validation_bts["002-validation"].setAttribute("nextPageId", e.target.getAttribute("toPage"))
     CONVERSION_TYPE = e.target.getAttribute("id")
@@ -180,12 +218,16 @@ function addEventListenersToCardValidationBtns() {
 screw_diameter_input.addEventListener("focusin", clearInputOnFocusIn)
 input_stroke_mm.addEventListener("focusin", clearInputOnFocusIn)
 input_stroke_cm3.addEventListener("focusin", clearInputOnFocusIn)
+//input_rotation_mms.addEventListener("focusin", clearInputOnFocusIn)
+input_rotation_rpm.addEventListener("focusin", clearInputOnFocusIn)
 
 
 screw_diameter_input.addEventListener("focusout", inputScrewDiameterFocusOutEventHandler)
 
 input_stroke_mm.addEventListener("focusout", inputStrokeFocusOutEventHandler)
 input_stroke_cm3.addEventListener("focusout", inputStrokeFocusOutEventHandler)
+//input_rotation_mms.addEventListener("focusout", inputRotationFocusOutEventHandler)
+input_rotation_rpm.addEventListener("focusout", inputRotationFocusOutEventHandler)
 
 addEventListenersToCardValidationBtns()
 addEventListenersToRadioBtns()
