@@ -98,6 +98,13 @@
                             </div>
                         </div>
 
+                        <div class="wrapper">
+                            <p class="label">mm/s ➔ 1/min</p>
+                            <div class="radio-container">
+                                <input class="input radio" type="radio" name="conversion_type" id="radio_mms_to_rpm" toPage="card-006">
+                            </div>
+                        </div>
+
 
                     <div class="footer">
 
@@ -278,7 +285,7 @@
                         <div class="wrapper">
                             <p class="label">Velocidade Linear</p>
                             <p class="label-unit">l</p>
-                            <input class="input realtime" type="number" disabled="true" name="result_rotation_mms" value="">
+                            <input class="input realtime" type="number" disabled="true" name="result_rotation_mms" value="0">
                             <p class="label-unit">mm/s</p>
                         </div>
 
@@ -316,6 +323,66 @@
             </div>
         </div>
         
+        <div id="card-006" class="card">
+
+            <div class="header">
+                <a href="#" class="button param dark" nextPageId="card-001">Ø</a>
+                <a href="#" class="button quality dark">ƒ</a>
+                <a href="#" class="button config-selected dark">=</a>
+            </div>
+
+            <div class="container">
+                <div class="content">
+                    <h2 class="card-title">Milímetros por Segundo para Rotações por Minuto </h2>
+                        
+                        <div class="wrapper">
+                            <p class="label">Velocidade Linear</p>
+                            <p class="label-unit">l</p>
+                            <input class="input" type="number" name="input_rotation_mms" value="0">
+                            <p class="label-unit">mm/s</p>
+                        </div>
+
+                        <div class="wrapper">
+                            <p class="label">Velocidade Radial</p>
+                            <p class="label-unit">r</p>
+                            <input class="input realtime" type="number" disabled="true" name="result_rotation_rpm" value="0">
+                            <p class="label-unit">1/min</p>
+                        </div>
+
+                    <div class="footer">
+
+                        <div class="overview">
+                            <div class="wrapper left">
+                                <p class="label-unit">Ø</p>
+                                <p class="overview-result" id="result_screw_diameter_mm">00</p>
+                                <p class="label-unit">mm</p>
+                                
+                                <div class="spacer"></div>
+
+                                <p class="label-unit">s/v</p>
+                                <p class="overview-result" id="result_stroke_mm">00.0</p>
+                                <p class="label-unit">mm</p>
+        
+                                <div class="spacer"></div>
+
+                                <p>=</p>
+        
+                                <div class="spacer"></div>
+
+                                <p class="label-unit pink">V</p>
+                                <p class="overview-result" id="result_stroke_cm3">0.000</p>
+                                <p class="label-unit">cm³</p>
+        
+                            </div>
+                        </div>
+
+                        <a id="006-validation" href="#" class="button next" nextPageId="card-002">❮</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <script src="./scripts/app.js" type="module"></script>
         <!-- <script src="./scripts/debug.js" type="module"></script> -->
     </body>

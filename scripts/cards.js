@@ -9,8 +9,6 @@ function setCardVisibleById(cardId) {
 
     cards[cardId].style = "display: flex"
 
-    console.log(cardId);
-
 }
 
 setCardVisibleById("card-001")
